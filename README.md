@@ -1,9 +1,11 @@
 # big-data-demo
+# Guincho Power
 
-##Goal: Implement a data analytics system using:
 
-  - Infrastructure as Code frameworks (e.g. Terraform, CloudFormation, Ansible, Chef, Puppet) and modern development practices (CI/CD, DevOps, GitOps, Agile, etc.)
-  - Public cloud providers (AWS, Google Cloud Platform, Azure)
-  - Containerization technologies and container orchestration (Kubernetes, OpenShift, Docker, Mesos, etc.)
-  - Different distributed technologies (e.g. Spark, S3, Snowflake, DynamoDB, CockroachDB, HDFS, Hive, etc.)
+## Goal: Implement a data solution using:
+
+  - An Infrastructure as Code framework (Terraform) and modern development practices (CI/CD, GitOps)
+  - A public cloud providers (AWS)
+  - Containerization technologies and container orchestration (Kubernetes, Docker)
+  - Different distributed technologies (S3, DynamoDB)
   - Java / Go / Python / Scala / other languages
