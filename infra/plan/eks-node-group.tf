@@ -8,7 +8,7 @@ resource "aws_eks_node_group" "private" {
     "type" = "private"
   }
 
-  instance_types = ["t2.micro"]
+  instance_types = ["t3.medium"]
 
   scaling_config {
     desired_size = 1
@@ -109,5 +109,37 @@ resource "aws_iam_role_policy" "node-group-ClusterAutoscalerPolicy" {
       },
     ]
   })
+}
+
+resource "aws_security_group" "eks_nodes" {
+  name        = "${var.eks_cluster_name}-${var.env}/ClusterSharedNodeSecurityGroup"
+  description = "Communication between all nodes in the cluster"
+  vpc_id      = aws_vpc.main.id
+
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    self        = true
+  }
+
+  ingress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    security_groups = [aws_eks_cluster.eks.vpc_config[0].cluster_security_group_id]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name        = "${var.eks_cluster_name}-${var.env}/ClusterSharedNodeSecurityGroup"
+    Environment = var.env
+  }
 }
 

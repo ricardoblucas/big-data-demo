@@ -72,12 +72,12 @@ resource "aws_security_group" "eks_cluster" {
   }
 }
 
-# resource "aws_security_group_rule" "cluster_inbound" {
-#   description              = "Allow unmanaged nodes to communicate with control plane (all ports)"
-#   from_port                = 0
-#   protocol                 = "-1"
-#   security_group_id        = aws_eks_cluster.eks.vpc_config[0].cluster_security_group_id
-#   source_security_group_id = aws_security_group.eks_nodes.id
-#   to_port                  = 0
-#   type                     = "ingress"
-# }
+resource "aws_security_group_rule" "cluster_inbound" {
+  description              = "Allow unmanaged nodes to communicate with control plane (all ports)"
+  from_port                = 0
+  protocol                 = "-1"
+  security_group_id        = aws_eks_cluster.eks.vpc_config[0].cluster_security_group_id
+  source_security_group_id = aws_security_group.eks_nodes.id
+  to_port                  = 0
+  type                     = "ingress"
+}
