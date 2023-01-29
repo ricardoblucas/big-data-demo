@@ -53,12 +53,12 @@ variable "private_network_config" {
         associated_public_subnet = ""
         eks                      = false
     },
-    # "private-rds-2" = {
-    #     cidr_block               = "10.0.5.0/24"
-    #     az                       = "eu-west-1b"
-    #     associated_public_subnet = ""
-    #     eks                      = false
-    # }
+    "private-rds-2" = {
+        cidr_block               = "10.0.5.0/24"
+        az                       = "eu-west-1b"
+        associated_public_subnet = ""
+        eks                      = false
+    }
   }
 }
 
@@ -103,12 +103,12 @@ variable "public_network_config" {
         nat_gw = false
         eks = false
     },
-    # "public-rds-2" = {
-    #     cidr_block = "10.0.11.0/24"
-    #     az = "eu-west-1b"
-    #     nat_gw = false
-    #     eks = false
-    # }
+    "public-rds-2" = {
+        cidr_block = "10.0.11.0/24"
+        az = "eu-west-1b"
+        nat_gw = false
+        eks = false
+    }
   }
 }
 
