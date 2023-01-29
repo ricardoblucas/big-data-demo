@@ -129,3 +129,4 @@ locals {
 variable "internal_ip_range" {
     type = string
 }
+
