@@ -4,11 +4,15 @@ FROM python:3.9-slim-buster
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the application code to the container
-COPY . .
+COPY requirements.txt requirements.txt
 
 # Install dependencies
+RUN pip install --upgrade pip
+
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code to the container
+COPY . .
 
 # # Set environment variables
 # ENV DJANGO_SETTINGS_MODULE=your_django_project.settings
