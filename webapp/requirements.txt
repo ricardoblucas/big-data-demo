@@ -1,8 +1,10 @@
-asgiref @ file:///tmp/build/80754af9/asgiref_1625643473416/work
-certifi @ file:///C:/Windows/TEMP/abs_e9b7158a-aa56-4a5b-87b6-c00d295b01fanefpc8_o/croots/recipe/certifi_1655968940823/work/certifi
-Django @ file:///tmp/build/80754af9/django_1625585912945/work
-psycopg2 @ file:///C:/ci_310/psycopg2_1642085998310/work
-pytz @ file:///C:/Windows/TEMP/abs_90eacd4e-8eff-491e-b26e-f707eba2cbe1ujvbhqz1/croots/recipe/pytz_1654762631027/work
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
-typing_extensions @ file:///opt/conda/conda-bld/typing_extensions_1647553014482/work
+asgiref==3.4.1
+certifi==2022.12.7
+Django==3.2.5
+psycopg2==2.8.6
+pytz==2022.1
+setuptools==61.2.0
+sqlparse==0.4.1
+typing_extensions==4.1.1
+wheel==0.37.1
 wincertstore==0.2
