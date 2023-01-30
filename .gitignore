@@ -1,1 +1,4 @@
 __pycache__/
+docker-creds.json
+secret-registry.yaml
+infra/plan/.terraform
