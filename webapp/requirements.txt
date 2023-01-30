@@ -1,7 +1,7 @@
 asgiref==3.4.1
 certifi==2022.12.7
 Django==3.2.5
-psycopg2
+# psycopg2
 pytz==2022.1
 setuptools==61.2.0
 sqlparse==0.4.1
