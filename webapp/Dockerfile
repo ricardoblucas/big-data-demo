@@ -7,8 +7,11 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 
 # Install dependencies
-RUN pip install --upgrade pip
+RUN apt-get update
+RUN apt-get install libpq-dev
 
+
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Copy the application code to the container
