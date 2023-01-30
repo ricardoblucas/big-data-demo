@@ -9,7 +9,7 @@ on:
     - "**/*.yml"
     - "**/*.html"
     branches:         # array of glob patterns matching against refs/heads. Optional; defaults to all
-    - master          # triggers on pushes that contain changes in master
+    - main          # triggers on pushes that contain changes in main
 
 name: Build and Push an Image to ECR
 
@@ -29,7 +29,7 @@ jobs:
     steps:
 
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@main
 
     # Add steps here like linting, testing, minification, etc.
       
@@ -56,18 +56,18 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -a -m "$CONTAINER_IMAGE"
-    - name: Push changes to master
-      uses: ad-m/github-push-action@master
+    - name: Push changes to main
+      uses: ad-m/github-push-action@main
       with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          branch: main
           force: true       
     
     # Add additional steps here like scanning of image
 
-    # Only push to registry on master
+    # Only push to registry on main
     - name: Push
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       run: |
         # Push image to AWS ECR
         docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
