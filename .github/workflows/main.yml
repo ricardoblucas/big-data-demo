@@ -36,7 +36,7 @@ jobs:
     - name: Setup ECR
       run: |
         # Login to AWS ECR
-        $( aws ecr get-login-password | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE )
+        aws ecr get-login-password | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
     - name: Build and tag the image
       run: |
         # Build and tag the image
