@@ -7,8 +7,8 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 
 # Install dependencies
-# RUN apt-get update
-# RUN apt-get -y install libpq-dev python-dev
+RUN apt-get update
+RUN apt-get -y install libpq-dev python3-dev
 
 
 RUN pip install --upgrade pip
