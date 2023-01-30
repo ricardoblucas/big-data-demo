@@ -5,9 +5,9 @@ on:
     - "**/*.yml"
     - "**/*.html"
   push:
-    paths:
-    - "**/*.yml"
-    - "**/*.html"
+    # paths:
+    # - "**/*.yml"
+    # - "**/*.html"
     branches:         # array of glob patterns matching against refs/heads. Optional; defaults to all
     - main          # triggers on pushes that contain changes in main
 
