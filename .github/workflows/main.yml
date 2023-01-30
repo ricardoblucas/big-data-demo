@@ -29,7 +29,7 @@ jobs:
     steps:
 
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@master
 
     # Add steps here like linting, testing, minification, etc.
       
@@ -57,7 +57,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git commit -a -m "$CONTAINER_IMAGE"
     - name: Push changes to main
-      uses: ad-m/github-push-action@main
+      uses: ad-m/github-push-action@master
       with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
