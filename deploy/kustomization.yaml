@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- webapp-deployment.yaml
+- webapp-service.yaml
+
+images:
+- name: 187914879741.dkr.ecr.eu-west-1.amazonaws.com/surfsail-predict
+  newTag: d6cbdc0df33ef5f5dce803931e4d89031865223b
+- name: frontend
+  newName: guestbook
+  newTag: 3fa38b9d2acb82a6e567c5935d1037a1339e4f1d
+- name: guestbook
+  newName: guestbook
+  newTag: new
