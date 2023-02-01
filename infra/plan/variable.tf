@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "eu-west-1"
+  default = "eu-west-3"
 }
 
 variable "rds_port" {
@@ -10,7 +10,7 @@ variable "rds_port" {
 
 variable "az" {
   type    = list(string)
-  default = ["eu-west-1a", "eu-west-1b"]
+  default = ["eu-west-3a", "eu-west-3b"]
 }
 
 variable "env" {
@@ -37,25 +37,25 @@ variable "private_network_config" {
   default = {
     "private-eks-1" = {
         cidr_block               = "10.0.0.0/23"
-        az                       = "eu-west-1a"
+        az                       = "eu-west-3a"
         associated_public_subnet = "public-eks-1"
         eks                      = true
     },
     "private-eks-2" = {
         cidr_block               = "10.0.2.0/23"
-        az                       = "eu-west-1b"
+        az                       = "eu-west-3b"
         associated_public_subnet = "public-eks-2"
         eks                      = true
     },
     "private-rds-1" = {
         cidr_block               = "10.0.4.0/24"
-        az                       = "eu-west-1a"
+        az                       = "eu-west-3a"
         associated_public_subnet = ""
         eks                      = false
     },
     "private-rds-2" = {
         cidr_block               = "10.0.5.0/24"
-        az                       = "eu-west-1b"
+        az                       = "eu-west-3b"
         associated_public_subnet = ""
         eks                      = false
     }
@@ -87,25 +87,25 @@ variable "public_network_config" {
   default = {
     "public-eks-1" = {
         cidr_block = "10.0.6.0/23"
-        az = "eu-west-1a"
+        az = "eu-west-3a"
         nat_gw = true
         eks = true
     },
     "public-eks-2" = {
         cidr_block = "10.0.8.0/23"
-        az = "eu-west-1b"
+        az = "eu-west-3b"
         nat_gw = true
         eks = true
     },
     "public-rds-1" = {
         cidr_block = "10.0.10.0/24"
-        az = "eu-west-1a"
+        az = "eu-west-3a"
         nat_gw = false
         eks = false
     },
     "public-rds-2" = {
         cidr_block = "10.0.11.0/24"
-        az = "eu-west-1b"
+        az = "eu-west-3b"
         nat_gw = false
         eks = false
     }

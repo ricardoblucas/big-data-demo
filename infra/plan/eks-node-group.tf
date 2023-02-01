@@ -8,7 +8,7 @@ resource "aws_eks_node_group" "private" {
     "type" = "private"
   }
 
-  instance_types = ["t3.medium"]
+  instance_types = ["t2.micro"]
 
   scaling_config {
     desired_size = 1
