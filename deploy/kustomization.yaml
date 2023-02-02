@@ -6,7 +6,7 @@ resources:
 
 images:
 - name: 187914879741.dkr.ecr.eu-west-1.amazonaws.com/surfsail-predict
-  newTag: e58d27285becbc8af4e57fe3facac0c44260a6d6
+  newTag: d9a21ce0bc40973f54626620df0b2279adf86e36
 - name: frontend
   newName: webapp
 
